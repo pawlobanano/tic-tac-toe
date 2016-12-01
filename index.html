@@ -1,31 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <!-- Required meta tags always come first -->
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Tick Tack Toe project</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 
 <body>
 
-    <table>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <table class="tic-tac-toe">
+                    <tr>
+                        <td id="a1" onclick="clickAtButton(this)"></td>
+                        <td id="a2" onclick="clickAtButton(this)"></td>
+                        <td id="a3" onclick="clickAtButton(this)"></td>
+                    </tr>
+                    <tr>
+                        <td id="b1" onclick="clickAtButton(this)"></td>
+                        <td id="b2" onclick="clickAtButton(this)"></td>
+                        <td id="b3" onclick="clickAtButton(this)"></td>
+                    </tr>
+                    <tr>
+                        <td id="c1" onclick="clickAtButton(this)"></td>
+                        <td id="c2" onclick="clickAtButton(this)"></td>
+                        <td id="c3" onclick="clickAtButton(this)"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <table>
+                    <tr>History</tr>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- Contextual button for informational alert messages -->
+        <button type="button" class="btn btn-info">Info</button>
+
+        <!-- Indicates caution should be taken with this action -->
+        <button type="button" class="btn btn-warning">Warning</button>
+
+    </div>
 
     <script src="js/game.js"></script>
 </body </hmtl>

@@ -1,5 +1,24 @@
-td {
-    border: 1px solid black;
-    height: 50px;
-    width: 50px;
+.tic-tac-toe table {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+.tic-tac-toe td {
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  min-height: 50px;
+  border: 2px solid black;
+}
+
+/* X */
+.tic-tac-toe .x {
+  background: #f88;
+  color: #f88;
+}
+
+/* O */
+.tic-tac-toe .o {
+  background: #8f8;
+  color: #8f8;
 }
