@@ -1,5 +1,22 @@
-function clickAtButton(cellIndex) {
-    document.getElementById(cellIndex.id).innerHTML = "X";
+function clickAtButton(cell) {
+    document.getElementById(cell.id).innerText = "X";
 };
 
-document.getElementById(cellIndex.id).onclick = clickAtButton;
+document.getElementById(cell.id).onclick = clickAtButton;
+
+/* Player module */
+var player = (function () {
+    var name = [{
+        playerX: "X", 
+        playerY: "Y"
+    }];
+
+    return {
+        playerName: function () {
+            return 'Player\'s name is: ' +
+                player.name;
+        }
+    };
+})();
+
+player.playerName(); // Player's name is: X/Y
