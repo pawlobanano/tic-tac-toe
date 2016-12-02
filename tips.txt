@@ -1,0 +1,50 @@
+Mailować prowadzących:
+Przemysław Kędzierski
+
+Logika przekazywana przez nazwy klas. Ładniejsze rozwiązanie?
+
+document.   (struktura drzewo; 
+
+Moduł „history” będzie posiadać następujące metody:
+Gettery i Settery na module History!
+- xWon
+- oWon
+- wasDraw
+- getTimesXWon
+- getTimesOWon
+- getTimesWasDraw
+
+
+Project structure:
+app
+    History
+    Board
+    Engine
+    Winner-checker
+gulp    (test runner) (można)
+gulpfile.js           (można)
+node_modules
+index.hmtl
+karma.conf.js
+...
+
+
+Change starting player - button do zmieniania, kto zaczyna na samym początku!
+
+Funkcja do planszy:
+- tworzy nowy obiekt (tak wyczyści stan planszy)
+
+
+Testy:
+- czy po wyczyszczeniu plansza jest pusta
+- czy zmienia się gracz po każdej turze
+
+function Cell() {
+    this.canCheck = true;
+    this.isX;
+}
+
+
+function insertX(e) {
+    e.innerText = "X";
+}

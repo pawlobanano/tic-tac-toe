@@ -2,7 +2,6 @@ function clickAtButton(cell) {
     document.getElementById(cell.id).innerText = "X";
 };
 
-document.getElementById(cell.id).onclick = clickAtButton;
 
 /* Player module */
 var player = (function () {
