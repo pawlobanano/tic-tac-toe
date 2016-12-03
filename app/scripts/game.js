@@ -7,16 +7,19 @@
   3. Lock the board 
   4. Set winer / draw
   5. Update History (API)
- */
+  6. New game option
+*/
 
-/* Variables */
+/* 
+    Variables 
+*/
 var cellStates = [null, null, null, null, null, null, null, null, null],
-  state = {
+  cellState = {
     null: null,
     x: "x",
     o: "o"
   },
-  cells = [0, 1, 2, 3, 4, 5, 6, 7, 8],
+  cellIds = [0, 1, 2, 3, 4, 5, 6, 7, 8],
   winPatterns = [
     [0, 1, 2], // top row
     [3, 4, 5], // middle row
@@ -27,29 +30,39 @@ var cellStates = [null, null, null, null, null, null, null, null, null],
     [0, 4, 8], // diagonally
     [2, 4, 6] // diagonally
   ],
-  player1 = "x",
-  player2 = "y",
-  gameOn = false;
+  player1 = cellState.x,
+  player2 = cellState.o,
+  gameOn = false,
+  startingPlayerX = "First player X",
+  startingPlayerO = "First player O",
+  startingPlayerButton = document.getElementById("player-switcher"),
+  restartButton = document.getElementById("restart-button");
 
+/* 
+    Functions 
+*/
+// 1.
+function clearGrid() {};
 
-/* Functions */
-function turn(clickedCellId) {
-  var player = clickedCellId,
-    cell;
-  if (player1 === "x") {
-    cell = document.getElementById(clickedCellId);
-    console.log(cell);
+// 2.
+// Automatic default value setter for startingPlayerButton
+(function () {
+  if (!startingPlayerButton.innerText) startingPlayerButton.innerText = startingPlayerX;
+})();
+
+function switchStartingPlayer() {
+
+  if (startingPlayerButton.innerText === startingPlayerX) {
+    startingPlayerButton.innerText = startingPlayerO;
+  } else {
+    startingPlayerButton.innerText = startingPlayerX;
   }
-  console.log(player);
-};
 
-function resetGrid() {
-  document.getElementById("#tic-tac-toe-board td").html("");
-  document.getElementById("#tic-tac-toe-board td").attr("class", "");
 }
 
-window.onload = function () {
-  document.getElementById("restart").onclick = function () {
-    resetGrid();
-  };
+// 2.1
+function turn(cellId) {
+
+  console.log(cellId);
+
 };

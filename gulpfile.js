@@ -10,7 +10,7 @@ gulp.task('copy-css', function () {
 gulp.task('serve', ['copy-css'], function () {
   browserSync({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
     }
   });
 
