@@ -49,3 +49,11 @@ function Cell() {
 function insertX(e) {
     e.innerText = "X";
 }
+
+
+Inspiring resources:
+- NoJS approach; good graphics;
+http://codepen.io/ziga-miklic/blog/pure-css-tic-tac-toe/
+https://codepen.io/ziga-miklic/pen/Fagmh
+
+
