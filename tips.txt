@@ -17,10 +17,10 @@ Gettery i Settery na module History!
 
 Project structure:
 app
-    History
-    Board
-    Engine
-    Winner-checker
+  History
+  Board
+  Engine
+  Winner-checker
 gulp    (test runner) (można)
 gulpfile.js           (można)
 node_modules
@@ -52,7 +52,7 @@ function insertX(e) {
 
 
 Inspiring resources:
-- NoJS approach; good graphics;
+- Good graphics, NoJS approach;
 http://codepen.io/ziga-miklic/blog/pure-css-tic-tac-toe/
 https://codepen.io/ziga-miklic/pen/Fagmh
 

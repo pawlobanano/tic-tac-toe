@@ -1,23 +1,23 @@
 #tic-tac-toe-board td {
-    width: 50px;
-    min-width: 50px;
-    height: 50px;
-    min-height: 50px;
-    border: 2px solid deepskyblue;
+  width: 50px;
+  min-width: 50px;
+  height: 50px;
+  min-height: 50px;
+  border: 2px solid deepskyblue;
 }
 
 
 /* X */
 
 .tic-tac-toe .x {
-    background: #f88;
-    color: #f88;
+  background: #f88;
+  color: #f88;
 }
 
 
 /* O */
 
 .tic-tac-toe .o {
-    background: #8f8;
-    color: #8f8;
+  background: #8f8;
+  color: #8f8;
 }

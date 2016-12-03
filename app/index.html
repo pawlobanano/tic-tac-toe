@@ -2,51 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Tick Tack Toe mini JS project</title>
-    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Tick Tack Toe mini JS project</title>
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 
 <body>
-    <div id="container">
-        <div id="game-row">
-            <div id="tic-tac-toe-grid">
-                <table id="tic-tac-toe-board">
-                    <tr>
-                        <td id="1" class="test" onclick="performTurn(this)"></td>
-                        <td id="2" onclick="performTurn(this)"></td>
-                        <td id="3" onclick="performTurn(this)"></td>
-                    </tr>
-                    <tr>
-                        <td id="4" onclick="performTurn(this)"></td>
-                        <td id="5" onclick="performTurn(this)"></td>
-                        <td id="6" onclick="performTurn(this)"></td>
-                    </tr>
-                    <tr>
-                        <td id="7" onclick="performTurn(this)"></td>
-                        <td id="8" onclick="performTurn(this)"></td>
-                        <td id="9" onclick="performTurn(this)"></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div id="history-row">
-            <div id="history">
-                <table>
-                    <tr>History</tr>
-                </table>
-            </div>
-        </div>
-        <div id="menu-row">
-            <div id="menu">
-                <button type="button" id="player-setter" class="btn btn-info player">Switch starting player</button>
-                <button type="button" id="restart" class="btn btn-warning">Restart</button>
-            </div>
-        </div>
+  <div id="container">
+    <div id="game-row">
+      <div id="tic-tac-toe-grid">
+        <table id="tic-tac-toe-board">
+          <tr>
+            <td id="1" class="test" onclick="performTurn(this)"></td>
+            <td id="2" onclick="performTurn(this)"></td>
+            <td id="3" onclick="performTurn(this)"></td>
+          </tr>
+          <tr>
+            <td id="4" onclick="performTurn(this)"></td>
+            <td id="5" onclick="performTurn(this)"></td>
+            <td id="6" onclick="performTurn(this)"></td>
+          </tr>
+          <tr>
+            <td id="7" onclick="performTurn(this)"></td>
+            <td id="8" onclick="performTurn(this)"></td>
+            <td id="9" onclick="performTurn(this)"></td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <script src="js/game.js"></script>
+    <div id="history-row">
+      <div id="history">
+        <table>
+          <tr>History</tr>
+        </table>
+      </div>
+    </div>
+    <div id="menu-row">
+      <div id="menu">
+        <button type="button" id="player-setter" class="btn btn-info player">Switch starting player</button>
+        <button type="button" id="restart" class="btn btn-warning">Restart</button>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/game.js"></script>
 </body>
 </hmtl>

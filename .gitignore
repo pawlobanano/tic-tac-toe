@@ -1,2 +1,8 @@
-node_modules/
+# Editor config
 .vscode/
+
+# NodeJS repository
+node_modules/
+
+# Files copied at start
+app/styles/bootstrap.min.css
