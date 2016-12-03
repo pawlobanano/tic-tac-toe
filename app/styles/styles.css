@@ -1,4 +1,4 @@
-#tic-tac-toe-board td {
+#tic-tac-toe-table td {
   width: 50px;
   min-width: 50px;
   height: 50px;
@@ -6,18 +6,14 @@
   border: 2px solid deepskyblue;
 }
 
-
 /* X */
-
-.tic-tac-toe .x {
+.x {
   background: #f88;
   color: #f88;
 }
 
-
 /* O */
-
-.tic-tac-toe .o {
+.o {
   background: #8f8;
   color: #8f8;
 }
