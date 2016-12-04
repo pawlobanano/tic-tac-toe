@@ -1,25 +1,25 @@
 /*
-  1. Clear board 
+  0. Init
+  1. Clear grid 
   2. Set sign for starting player (default - X)
-    2.1. Perform turn (click on one of grid's cell)
-    2.2. Check if is win/draw
-      2.2.1. Show popup
+  2.1. Perform turn (click on one of grid's cell)
+  2.2.1. Check if is win/draw
+  2.2.2.1. Show popup
   3. Lock the board 
   4. Set winer / draw
   5. Update History (API)
   6. New game option
 */
 
-/* 
-    Variables 
-*/
+/** 
+ * Variables 
+ */
 var cellStates = [null, null, null, null, null, null, null, null, null],
   cellState = {
-    null: null,
-    x: "x",
-    o: "o"
+    EMPTY: null,
+    X: 'x',
+    O: 'o'
   },
-  cellIds = [0, 1, 2, 3, 4, 5, 6, 7, 8],
   winPatterns = [
     [0, 1, 2], // top row
     [3, 4, 5], // middle row
@@ -29,40 +29,146 @@ var cellStates = [null, null, null, null, null, null, null, null, null],
     [2, 5, 8], // right column
     [0, 4, 8], // diagonally
     [2, 4, 6] // diagonally
-  ],
-  player1 = cellState.x,
-  player2 = cellState.o,
-  gameOn = false,
-  startingPlayerX = "First player X",
-  startingPlayerO = "First player O",
-  startingPlayerButton = document.getElementById("player-switcher"),
-  restartButton = document.getElementById("restart-button");
+  ], // to win-checker.js
+  player1 = cellState.X,
+  player2 = cellState.O,
+  currentPlayer,
+  gameStates = {
+    IN_PROGRESS: 'in progress',
+    READY: 'ready'
+  },
+  gameState,
+  startingPlayerX = 'First player X',
+  startingPlayerO = 'First player O',
+  startingPlayerButton = document.getElementById('player-switcher'),
+  restartButton = document.getElementById('restart-button'),
+  cells = document.querySelectorAll('.cell');
 
-/* 
-    Functions 
-*/
-// 1.
-function clearGrid() {};
+/**
+ * Functions 
+ */
 
-// 2.
-// Automatic default value setter for startingPlayerButton
-(function () {
+/**
+ * 0. Init
+ */
+function init() {
   if (!startingPlayerButton.innerText) startingPlayerButton.innerText = startingPlayerX;
-})();
 
+  gameState = gameStates.READY;
+  currentPlayer = player1;
+
+  clearGrid();
+}
+
+/**
+ * 1. Clear grid
+ */
+function clearGrid() {
+
+  cells.forEach(function (element) {
+    element.innerText = '';
+  }, this);
+
+};
+
+/**
+ * 2. Set sign for starting player (default - X)
+ * 
+ * @returns
+ */
 function switchStartingPlayer() {
+
+  if (gameState !== gameStates.READY) return;
 
   if (startingPlayerButton.innerText === startingPlayerX) {
     startingPlayerButton.innerText = startingPlayerO;
+    player1 = cellState.O;
+    player2 = cellState.X;
   } else {
     startingPlayerButton.innerText = startingPlayerX;
+    player1 = cellState.X;
+    player2 = cellState.O;
+  }
+
+  currentPlayer = player1;
+
+}
+
+
+/**
+ * 2.1. Perform turn (click on one of grid's cell)
+ * 
+ * @param {any} cellId
+ * @returns
+ */
+function turn(cellId) {
+
+  if (cellStates[cellId] !== cellState.EMPTY) return;
+
+  gameState = gameStates.IN_PROGRESS;
+
+  cellStates[cellId] = currentPlayer; // cellStates Array
+
+  cells[cellId].innerText = currentPlayer; // cells in DOM
+
+  check(currentPlayer);
+
+  currentPlayer = currentPlayer === player1 ? player2 : player1;
+
+};
+
+/**
+ * 2.2.1. Check if is win/draw
+ * 2.2.2.1. Show popup
+ * 
+ * @param {any} currentPlayer
+ * @returns
+ */
+function check(currentPlayer) { // to winner-checker.js
+
+  for (var i = 0; i < winPatterns.length; i++) {
+
+    if ([cellStates[winPatterns[i][0]],
+        cellStates[winPatterns[i][1]],
+        cellStates[winPatterns[i][2]]
+      ]
+      .indexOf(currentPlayer) === -1) {
+      continue;
+    }
+    console.log(i);
+    if (checkWinPatternsForCurrentPlayer(i, currentPlayer)) {
+      setTimeout(function () {
+        alert((currentPlayer + " Won"));
+      });
+
+      return;
+    }
+
   }
 
 }
 
-// 2.1
-function turn(cellId) {
+/**
+ * Helper function to speed up winPatterns comparison
+ * 
+ * @param {any} i
+ * @param {any} currentPlayer
+ * @returns
+ */
+function checkWinPatternsForCurrentPlayer(i, currentPlayer) { // to winner-checker.js
 
-  console.log(cellId);
+  if (cellStates[winPatterns[i][0]] === currentPlayer &&
+    cellStates[winPatterns[i][1]] === currentPlayer &&
+    cellStates[winPatterns[i][2]] === currentPlayer) {
 
-};
+    return true;
+  }
+
+  return false;
+
+}
+
+
+(function () {
+  init();
+})();
