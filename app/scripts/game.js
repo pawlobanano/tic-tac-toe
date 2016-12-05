@@ -41,6 +41,8 @@ var cellStates = [null, null, null, null, null, null, null, null, null],
         WAITING: 'waiting'
     },
     gameState,
+    gameHasWinner = false,
+    round = 0,
     startingPlayerX = 'First player X',
     startingPlayerO = 'First player O',
     startingPlayerButton = document.getElementById('player-switcher'),
@@ -131,6 +133,8 @@ function turn(cellId) {
 
     cells[cellId].innerText = currentPlayer; // cells in DOM
 
+    round++;
+
     checkGameStatus(currentPlayer);
 
     currentPlayer = currentPlayer === player1 ? player2 : player1;
@@ -144,6 +148,8 @@ function resetGame() {
 
     cellStates = [null, null, null, null, null, null, null, null, null];
     cells.disabled = false;
+    round = 0;
+    gameHasWinner = false;
 
     init();
 

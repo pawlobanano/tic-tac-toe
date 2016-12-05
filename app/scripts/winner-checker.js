@@ -22,14 +22,19 @@ function checkGameStatus(currentPlayer) {
         if (checkWinPatternsForCurrentPlayer(i, currentPlayer)) { // true if winner is found
 
             gameState = gameStates.WAITING;
+
             cells.disabled = true;
-            alert((currentPlayer + ' won')); // nicer modal maybe?
+            gameHasWinner = true;
+            alert(currentPlayer + ' won'); // nicer modal maybe?
 
             return;
-
         }
 
     }
+
+    if (round === 9 && gameHasWinner === false) { // Draw only after all moves
+        alert('It is draw'); // nicer modal maybe?
+    };
 
 }
 
