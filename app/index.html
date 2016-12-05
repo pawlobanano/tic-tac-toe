@@ -2,51 +2,52 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Tick Tack Toe mini JS project</title>
-  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Tick Tack Toe mini JS project</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 
 <body>
-  <div id="container">
-    <div id="board-row">
-      <div id="tic-tac-toe-grid">
-        <table id="tic-tac-toe-table">
-          <tr>
-            <td id="0" class="cell" onclick="turn(this.id)"></td>
-            <td id="1" class="cell" onclick="turn(this.id)"></td>
-            <td id="2" class="cell" onclick="turn(this.id)"></td>
-          </tr>
-          <tr>
-            <td id="3" class="cell" onclick="turn(this.id)"></td>
-            <td id="4" class="cell" onclick="turn(this.id)"></td>
-            <td id="5" class="cell" onclick="turn(this.id)"></td>
-          </tr>
-          <tr>
-            <td id="6" class="cell" onclick="turn(this.id)"></td>
-            <td id="7" class="cell" onclick="turn(this.id)"></td>
-            <td id="8" class="cell" onclick="turn(this.id)"></td>
-          </tr>
-        </table>
-      </div>
+    <div id="container">
+        <div id="board-row">
+            <div id="tic-tac-toe-grid">
+                <table id="tic-tac-toe-table">
+                    <tr>
+                        <td id="0" class="cell" onclick="turn(this.id)"></td>
+                        <td id="1" class="cell" onclick="turn(this.id)"></td>
+                        <td id="2" class="cell" onclick="turn(this.id)"></td>
+                    </tr>
+                    <tr>
+                        <td id="3" class="cell" onclick="turn(this.id)"></td>
+                        <td id="4" class="cell" onclick="turn(this.id)"></td>
+                        <td id="5" class="cell" onclick="turn(this.id)"></td>
+                    </tr>
+                    <tr>
+                        <td id="6" class="cell" onclick="turn(this.id)"></td>
+                        <td id="7" class="cell" onclick="turn(this.id)"></td>
+                        <td id="8" class="cell" onclick="turn(this.id)"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="history-row">
+            <div id="history">
+                <table id="history-table">
+                    <tr>History</tr>
+                </table>
+            </div>
+        </div>
+        <div id="menu-row">
+            <div id="menu">
+                <button type="button" id="player-switcher" class="btn btn-info" onclick="switchStartingPlayer()"></button>
+                <button type="button" id="restart-button" class="btn btn-warning" onclick="resetGame()">Restart</button>
+            </div>
+        </div>
     </div>
-    <div id="history-row">
-      <div id="history">
-        <table id="history-table">
-          <tr>History</tr>
-        </table>
-      </div>
-    </div>
-    <div id="menu-row">
-      <div id="menu">
-        <button type="button" id="player-switcher" class="btn btn-info" onclick="switchStartingPlayer()"></button>
-        <button type="button" id="restart-button" class="btn btn-warning" onclick="clearGrid()">Restart</button>
-      </div>
-    </div>
-  </div>
-  <script src="scripts/game.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/winner-checker.js"></script>
 </body>
 </hmtl>
