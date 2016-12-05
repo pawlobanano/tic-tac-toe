@@ -33,6 +33,7 @@ var cellStates = [null, null, null, null, null, null, null, null, null],
     ], // to win-checker.js
     player1 = cellState.X,
     player2 = cellState.O,
+    firstPlayer = player1,
     currentPlayer,
     gameStates = {
         IN_PROGRESS: 'in progress',
@@ -56,9 +57,10 @@ var cellStates = [null, null, null, null, null, null, null, null, null],
 function init() {
 
     if (!startingPlayerButton.innerText) startingPlayerButton.innerText = startingPlayerX;
+
     gameState = gameStates.READY;
 
-    currentPlayer = player1;
+    currentPlayer = firstPlayer;
 
     clearGrid();
 
@@ -82,14 +84,27 @@ function clearGrid() {
  */
 function switchStartingPlayer() {
 
-    if (gameState !== gameStates.READY) return;
+    if (gameState !== gameStates.READY) { // gameState === IN_PROGRESS or WAITING
+
+        if (startingPlayerButton.innerText === startingPlayerX) {
+            startingPlayerButton.innerText = startingPlayerO;
+            firstPlayer = cellState.O;
+        } else {
+            startingPlayerButton.innerText = startingPlayerX;
+            firstPlayer = cellState.X;
+        }
+
+        return;
+    }
 
     if (startingPlayerButton.innerText === startingPlayerX) {
         startingPlayerButton.innerText = startingPlayerO;
+        firstPlayer = cellState.O;
         player1 = cellState.O;
         player2 = cellState.X;
     } else {
         startingPlayerButton.innerText = startingPlayerX;
+        firstPlayer = cellState.X;
         player1 = cellState.X;
         player2 = cellState.O;
     }
@@ -97,21 +112,6 @@ function switchStartingPlayer() {
     currentPlayer = player1;
 
 }
-
-if (gameState === gameStates.READY) {
-
-    if (startingPlayerButton.innerText === startingPlayerX) {
-        startingPlayerButton.innerText = startingPlayerO;
-        player1 = cellState.O;
-        player2 = cellState.X;
-    } else {
-        startingPlayerButton.innerText = startingPlayerX;
-        player1 = cellState.X;
-        player2 = cellState.O;
-    }
-
-};
-
 
 /**
  * 2.1. Perform turn (click on one of grid's cell)
