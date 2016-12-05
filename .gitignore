@@ -1,8 +1,9 @@
 # Editor config
-.vscode/
+#.vscode/
 
 # NodeJS repository
 node_modules/
 
 # Files copied at start
 app/styles/bootstrap.min.css
+app/styles/animate.min.css

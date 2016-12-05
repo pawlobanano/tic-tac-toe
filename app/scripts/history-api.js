@@ -1,5 +1,5 @@
 'use strict';
-var historyAPI = (function() {
+var historyApi = (function() {
     var results = {
         oWonTimes: 0,
         xWonTimes: 0,
