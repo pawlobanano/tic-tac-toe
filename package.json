@@ -10,6 +10,7 @@
   "engine": "node >= 0.10.0",
   "dependencies": {},
   "devDependencies": {
+    "animate.css": "^3.5.2",
     "bootstrap": "^4.0.0-alpha.5",
     "browser-sync": "^2.18.2",
     "gulp": "^3.9.1",

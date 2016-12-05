@@ -3,7 +3,9 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 gulp.task('copy-css', function() {
-    gulp.src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+    gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css',
+            './node_modules/animate.css/animate.min.css'
+        ])
         .pipe(gulp.dest('app/styles/'));
 });
 
