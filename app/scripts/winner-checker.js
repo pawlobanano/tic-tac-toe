@@ -57,8 +57,10 @@ var winnerChecker = (function() {
 
                 if (checkWinPatternsForCurrentPlayer(i, currentPlayer, cellStates, cellState)) { // true if winner is found
                     gameState = gameStates.WAITING;
-                    cells.disabled = true;
                     gameHasWinner = true;
+                    cells.forEach(function(element) {
+                        element.classList.add('not-active');
+                    });
 
                     if (currentPlayer === cellState.X) {
                         historyApi.xWon();
@@ -69,7 +71,6 @@ var winnerChecker = (function() {
                     }
 
                     alert(currentPlayer + ' win!');
-
                     return;
                 }
             }

@@ -1,91 +1,96 @@
 body {
-  color: #b6b5ca;
-  font-family: 'Arial', sans-serif;
-  text-align: center;
+    color: #b6b5ca;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
 }
 
 .tic-tac-toe-row {
-  margin: 25px;
-  padding: 25px;
+    margin: 25px;
+    padding: 25px;
 }
 
 #tic-tac-toe-table {
-  margin: 0 auto;
+    margin: 0 auto;
 }
 
 .cell {
-  width: 75px;
-  height: 75px;
-  line-height: 100%;
-  font-size: 4.25em;
-  border: 2px dashed deepskyblue;
+    width: 75px;
+    height: 75px;
+    line-height: 100%;
+    font-size: 4.25em;
+    border: 2px dashed deepskyblue;
 }
 
 .x {
-  color: limegreen;
+    color: limegreen;
 }
 
 .o {
-  color: coral;
+    color: coral;
 }
 
 .tic-tac-toe-history-row {
-  margin: 25px;
-  padding: 25px;
+    margin: 25px;
+    padding: 25px;
 }
 
 #tic-tac-toe-history-table {
-  width: 100%;
-  margin-bottom: 25px;
+    width: 100%;
+    margin-bottom: 25px;
 }
 
 #player-switcher-button {
-  margin-right: 15px;
+    margin-right: 15px;
+}
+
+.not-active {
+    pointer-events: none;
+    cursor: default;
 }
 
 
 /* Top row */
 
 .cell--top-left {
-  border-top: none;
-  border-left: none;
+    border-top: none;
+    border-left: none;
 }
 
 .cell--top-middle {
-  border-top: none;
-  border-right: none;
+    border-top: none;
+    border-right: none;
 }
 
 .cell--top-right {
-  border-top: none;
-  border-right: none;
+    border-top: none;
+    border-right: none;
 }
 
 
 /* Middle row */
 
 .cell--middle-left {
-  border-left: none;
+    border-left: none;
 }
 
 .cell--middle-right {
-  border-right: none;
+    border-right: none;
 }
 
 
 /* Bottom row */
 
 .cell--bottom-left {
-  border-bottom: none;
-  border-left: none;
+    border-bottom: none;
+    border-left: none;
 }
 
 .cell--bottom-middle {
-  border-bottom: none;
-  border-right: none;
+    border-bottom: none;
+    border-right: none;
 }
 
 .cell--bottom-right {
-  border-bottom: none;
-  border-right: none;
+    border-bottom: none;
+    border-right: none;
 }

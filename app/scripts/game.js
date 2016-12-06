@@ -1,6 +1,7 @@
 'use strict';
 /*
-  0. Init
+  0. Initialize application
+  0.1. Initialize application helper
   1. Clear grid 
   2. Set sign for starting player (default - X)
   2.1. Perform turn (click on one of grid's cell)
@@ -46,13 +47,16 @@ var game = (function() {
                 element.innerText = '';
             }, this);
         },
+        /**
+         * 0.1. Initialize application helper
+         */
         init = function() {
             game.init();
         };
 
     return {
         /**
-         * 0. Init
+         * 0. Initialize application
          */
         init: function() {
             if (!startingPlayerButton.innerText) startingPlayerButton.innerText = startingPlayerX;
@@ -116,9 +120,11 @@ var game = (function() {
          */
         resetGame: function() {
             cellStates = [null, null, null, null, null, null, null, null, null];
-            cells.disabled = false;
             round = 0;
             gameHasWinner = false;
+            cells.forEach(function(element) {
+                element.classList.remove('not-active');
+            });
             init();
         }
 
