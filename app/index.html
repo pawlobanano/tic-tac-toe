@@ -2,61 +2,61 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Tick Tack Toe mini JS project</title>
-  <meta name="author" content="Paweł Banach">
-  <link rel="stylesheet" type="text/css" href="styles/animate.min.css">
-  <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <meta charset="utf-8">
+    <title>Tick Tack Toe mini JS project</title>
+    <meta name="author" content="Paweł Banach">
+    <link rel="stylesheet" type="text/css" href="styles/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
 </head>
 
 <body>
-  <div id="container">
-    <h1>Tick Tack Toe <span class="lead">mini JS project</span></h1>
-    <div class="row">
-      <div class="col-md-8">
-        <div class="tic-tac-toe-row">
-          <table id="tic-tac-toe-table">
-            <tr>
-              <td id="0" class="cell cell--top-left" onclick="turn(this.id)"></td>
-              <td id="1" class="cell cell--top-middle player-2" onclick="turn(this.id)"></td>
-              <td id="2" class="cell cell--top-right" onclick="turn(this.id)"></td>
-            </tr>
-            <tr>
-              <td id="3" class="cell cell--middle-left" onclick="turn(this.id)"></td>
-              <td id="4" class="cell" onclick="turn(this.id)"></td>
-              <td id="5" class="cell cell--middle-right" onclick="turn(this.id)"></td>
-            </tr>
-            <tr>
-              <td id="6" class="cell cell--bottom-left" onclick="turn(this.id)"></td>
-              <td id="7" class="cell cell--bottom-middle" onclick="turn(this.id)"></td>
-              <td id="8" class="cell cell--bottom-right" onclick="turn(this.id)"></td>
-            </tr>
-          </table>
+    <div id="container">
+        <h1>Tick Tack Toe <span class="lead">mini JS project</span></h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tic-tac-toe-row">
+                    <table id="tic-tac-toe-table">
+                        <tr>
+                            <td id="0" class="cell cell--top-left" onclick="game.turn(this.id)"></td>
+                            <td id="1" class="cell cell--top-middle player-2" onclick="game.turn(this.id)"></td>
+                            <td id="2" class="cell cell--top-right" onclick="game.turn(this.id)"></td>
+                        </tr>
+                        <tr>
+                            <td id="3" class="cell cell--middle-left" onclick="game.turn(this.id)"></td>
+                            <td id="4" class="cell" onclick="game.turn(this.id)"></td>
+                            <td id="5" class="cell cell--middle-right" onclick="game.turn(this.id)"></td>
+                        </tr>
+                        <tr>
+                            <td id="6" class="cell cell--bottom-left" onclick="game.turn(this.id)"></td>
+                            <td id="7" class="cell cell--bottom-middle" onclick="game.turn(this.id)"></td>
+                            <td id="8" class="cell cell--bottom-right" onclick="game.turn(this.id)"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="tic-tac-toe-history-row">
+                    <table id="tic-tac-toe-history-table">
+                        <span class="lead">Game history</span>
+                        <tr>
+                            <td>X wins: <span id="winsX">-</span></td>
+                        </tr>
+                        <tr>
+                            <td>O wins: <span id="winsO">-</span></td>
+                        </tr>
+                        <tr>
+                            <td>Draws: <span id="draws">-</span></td>
+                        </tr>
+                    </table>
+                    <button type="button" id="player-switcher-button" class="btn btn-info" onclick="game.switchStartingPlayer()"></button>
+                    <button type="button" id="restart-button" class="btn btn-warning" onclick="game.resetGame()">Restart</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="tic-tac-toe-history-row">
-          <table id="tic-tac-toe-history-table">
-            <span class="lead">Game history</span>
-            <tr>
-              <td>X wins: <span id="winsX">-</span></td>
-            </tr>
-            <tr>
-              <td>O wins: <span id="winsO">-</span></td>
-            </tr>
-            <tr>
-              <td>Draws: <span id="draws">-</span></td>
-            </tr>
-          </table>
-          <button type="button" id="player-switcher-button" class="btn btn-info" onclick="switchStartingPlayer()"></button>
-          <button type="button" id="restart-button" class="btn btn-warning" onclick="resetGame()">Restart</button>
-        </div>
-      </div>
     </div>
-  </div>
-  <script src="scripts/game.js"></script>
-  <script src="scripts/winner-checker.js"></script>
-  <script src="scripts/history-api.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/winner-checker.js"></script>
+    <script src="scripts/history-api.js"></script>
 </body>
 </hmtl>
