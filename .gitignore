@@ -1,5 +1,5 @@
 # Editor config
-#.vscode/
+.vscode/
 
 # NodeJS repository
 node_modules/

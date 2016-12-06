@@ -59,7 +59,7 @@ var game = (function() {
          * 0. Initialize application
          */
         init: function() {
-            startingPlayerButton.innerText = startingPlayerX;
+            if (startingPlayerButton.innerText === '') startingPlayerButton.innerText = startingPlayerX;
             gameState = gameStates.READY;
             currentPlayer = firstPlayer;
             clearGrid();
