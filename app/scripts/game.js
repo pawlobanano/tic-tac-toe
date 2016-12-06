@@ -59,7 +59,7 @@ var game = (function() {
          * 0. Initialize application
          */
         init: function() {
-            if (!startingPlayerButton.innerText) startingPlayerButton.innerText = startingPlayerX;
+            startingPlayerButton.innerText = startingPlayerX;
             gameState = gameStates.READY;
             currentPlayer = firstPlayer;
             clearGrid();
@@ -77,7 +77,7 @@ var game = (function() {
             cellStates[cellId] = currentPlayer; // cellStates Array
             document.getElementById(cellId).classList.add(currentPlayer);
             cells[cellId].innerText = currentPlayer; // cells in DOM
-            // document.getElementById(cellId).classList.add("animated");// animated appear
+            // document.getElementById(cellId).classList.add("animated"); // animated X/O appear (graphic bug in table borders)
             // document.getElementById(cellId).classList.add("pulse");
             round++;
             winnerChecker.checkGameStatus(currentPlayer, cellStates, cellState, round, gameStates, gameState, cells, gameHasWinner);
