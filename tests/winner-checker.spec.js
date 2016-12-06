@@ -1,11 +1,13 @@
-describe('winner checker module tests', function() {
+'use strict';
 
-    it('', function() {
-        // given
+describe('winner-checker module tests', function() {
 
-        // when
+    // it('', function() {
+    //     // given
 
-        // then
-    });
+    //     // when
+
+    //     // then
+    // });
 
 });

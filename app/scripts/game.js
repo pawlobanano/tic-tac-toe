@@ -126,6 +126,8 @@ var game = (function() {
                 element.classList.remove('not-active');
             });
             init();
+
+            return cellStates;
         }
 
     }
