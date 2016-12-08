@@ -2,7 +2,7 @@
 a mini project in pure JavaScript
 
 #### How to prepare development environment?
-Clone this repository, then from inside it and write:
+Clone this repository, go inside project's folder and write:
 ```javascript
 npm install
 gulp serve
